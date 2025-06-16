@@ -1,0 +1,205 @@
+/* Reset some browser defaults */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Nav bar styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1e1e1e;
+  color: white;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav-links a {
+  color: white;
+  margin-left: 1.5rem;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.nav-links :hover {
+  text-decoration: underline;
+}
+
+/* Homepage styles */
+.homepage {
+  max-width: 800px;
+  margin: 3rem auto;
+  padding: 0 1rem;
+  text-align: center;
+}
+
+.homepage h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.homepage p {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+/*Daily*/
+
+.daily-page {
+  max-width: 700px;
+  margin: 3rem auto;
+  padding: 0 1rem;
+  text-align: center;
+}
+
+.daily-page h1 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.challenge-box {
+  background-color: #ffffff;
+  border: 2px solid #1e1e1e;
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+.complete-btn {
+  background-color: #1e1e1e;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  margin-top: 1rem;
+  cursor: pointer;
+}
+
+.complete-btn:hover {
+  background-color: #333333;
+}
+
+.motivation-tip {
+  font-style: italic;
+  font-size: 1rem;
+  color: #666;
+}
+/*Push tree*/
+
+.container {
+  max-width: 900px;
+  margin: 3rem auto;
+  padding: 0 1rem;
+  text-align: center;
+}
+
+/* EXP Bar */
+.exp-bar {
+  background-color: #ddd;
+  height: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 1rem 0;
+}
+
+.exp-fill {
+  height: 100%;
+  background-color: #4caf50;
+  transition: width 0.3s ease;
+}
+
+.exp-label {
+  margin-bottom: 2rem;
+  font-weight: bold;
+}
+
+/* Grid of progression cards */
+.progression-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  padding: 1rem;
+  background-color: #f1f1f1;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card.locked {
+  background-color: #ccc;
+  color: #666;
+  cursor: not-allowed;
+  box-shadow: none;
+  opacity: 0.6;
+}
+
+.progression-section {
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.progression-section h2 {
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+}
+
+/*Stats*/
+
+.stats-page {
+  text-align: center;
+  padding-top: 2rem;
+}
+
+.stat-box {
+  margin: 2rem auto;
+  padding: 1rem 2rem;
+  background-color: #eee;
+  max-width: 400px;
+  border-radius: 8px;
+}
+
+.unlocked-skills ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.unlocked-skills li {
+  background: #d9f4dc;
+  margin: 0.5rem auto;
+  padding: 0.5rem 1rem;
+  max-width: 300px;
+  border-radius: 6px;
+  font-weight: 500;
+}
+/*Remove list numbers*/
+ol {
+  list-style-type: none;
+  padding-left: 0;
+}
+.container p {
+  margin-bottom: 1rem; 
+  line-height: 1.5;
+}

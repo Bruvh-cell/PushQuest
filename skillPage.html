@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Skill Detail</title>
+  <link rel="stylesheet" href="style.css" />
+  
+</head>
+<body>
+  <div class="navbar">
+    <div class="logo">PushQuest</div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="daily.html">Daily Challenge</a>
+      <a href="pushTree.html">Skills</a>
+      <a href="stats.html">Stats</a>
+    </div>
+  </div>
+
+  <div class="container">
+    <h1 id="skill-title">Skill Name</h1>
+    <p id="skill-description">Loading...</p>
+  </div>
+
+  <script src="skillsData.js"></script>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const skillName = params.get("name");
+    
+    const titleEl = document.getElementById("skill-title");
+    const descEl = document.getElementById("skill-description");
+
+    titleEl.textContent = skillName;
+
+    // Look up the skill in skillsData
+    const skillInfo = skillsData[skillName];
+    if (skillInfo) {
+      descEl.textContent = skillInfo.description;
+    } else {
+      descEl.textContent = "No details found for this skill.";
+    }
+
+    if (skillInfo.steps) {
+      const stepsContainer = document.createElement("div");
+      const stepsTitle = document.createElement("h3");
+      stepsTitle.textContent = "Steps for Good Form";
+      stepsContainer.appendChild(stepsTitle);
+
+      const stepsList = document.createElement("ol");
+      skillInfo.steps.forEach(step => {
+        const li = document.createElement("li");
+        li.textContent = step;
+        stepsList.appendChild(li);
+      });
+      stepsContainer.appendChild(stepsList);
+      document.querySelector(".container").appendChild(stepsContainer);
+    }
+    
+    if (skillInfo.video) {
+      const iframe = document.createElement("iframe");
+      iframe.width = "560";
+      iframe.height = "315";
+      iframe.src = `https://www.youtube.com/embed/${skillInfo.video}`;
+      iframe.title = "YouTube video player";
+      iframe.frameBorder = "0";
+      iframe.allow =
+        "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+      iframe.allowFullscreen = true;
+      iframe.style.maxWidth = "100%";
+      iframe.style.height = "500";
+
+      document.querySelector(".container").appendChild(iframe);
+    }
+  </script>
+</body>
+</html>
