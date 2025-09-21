@@ -116,8 +116,15 @@ if (!playerData.completedDailies[dayOfYear]) playerData.completedDailies[dayOfYe
 
 // --- Function to pick random challenges ---
 function getDailyChallenges(level, count = 4) {
-  // Get all challenges at or below current player level
-  const available = challenges.filter(ch => parseInt(ch.level.split(" ")[1]) <= level);
+  // Allow challenges from level-1, level, and level+1
+  const minLevel = Math.max(1, level - 1); // don't go below 1
+  const maxLevel = Math.min(15, level + 1); // don't go above max level
+
+  // Filter available challenges in this range
+  const available = challenges.filter(ch => {
+    const chLevel = parseInt(ch.level.split(" ")[1]);
+    return chLevel >= minLevel && chLevel <= maxLevel;
+  });
 
   const picked = [];
   const usedIndices = new Set();
@@ -133,8 +140,19 @@ function getDailyChallenges(level, count = 4) {
   return picked;
 }
 
+
 // --- Pick 4 challenges ---
-const dailyChallenges = getDailyChallenges(playerData.level);
+// --- Ensure dailyChallenges object exists ---
+if (!playerData.dailyChallenges) playerData.dailyChallenges = {};
+
+// --- Generate today's challenges only if missing ---
+if (!playerData.dailyChallenges[dayOfYear]) {
+  playerData.dailyChallenges[dayOfYear] = getDailyChallenges(playerData.level);
+  savePlayerData(playerData);
+}
+
+// --- Use stored challenges ---
+const dailyChallenges = playerData.dailyChallenges[dayOfYear];
 const tip = tips[dayOfYear % tips.length];
 
 // --- Display challenges ---

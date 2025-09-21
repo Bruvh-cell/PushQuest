@@ -3,7 +3,8 @@ const defaultPlayerData = {
   level: 1,
   exp: 0,
   unlockedSkills: ["Knee Push-Ups", "Push-Ups", "Sit-ups", "Plank"],
-  completedDailies: []
+  completedDailies: [],
+  dailyChallenges: {}
 };
 
 // --- Load Player Data ---
