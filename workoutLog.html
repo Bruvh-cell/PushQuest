@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Stats - PushQuest</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="navbar">
+    <div class="logo">PushQuest</div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="daily.html">Daily Challenge</a>
+      <a href="pushTree.html">Skills</a>
+      <a href="stats.html">Stats</a>
+      <a href="workoutLog.html">Workout Log</a>
+      <a href="additionalInfo.html">Extra</a>
+    </div>
+  </div>
+
+  <div class="weekly-planner">
+    <h2>Weekly Workout Planner</h2>
+    <div class="planner-grid">
+      <div class="day" data-day="Monday">
+        <h3>Monday</h3>
+        <input type="text" class="workout-name" placeholder="Workout Name">
+        <textarea class="workout-details" placeholder="Workout Details..."></textarea>
+        <button class="lock-btn">Lock</button>
+        <button class="complete-btn">Complete</button>
+      </div>
+      <div class="day" data-day="Tuesday">
+        <h3>Tuesday</h3>
+        <input type="text" class="workout-name" placeholder="Workout Name">
+        <textarea class="workout-details" placeholder="Workout Details..."></textarea>
+        <button class="lock-btn">Lock</button>
+        <button class="complete-btn">Complete</button>
+      </div>
+      <div class="day" data-day="Wednesday">
+        <h3>Wednesday</h3>
+        <input type="text" class="workout-name" placeholder="Workout Name">
+        <textarea class="workout-details" placeholder="Workout Details..."></textarea>
+        <button class="lock-btn">Lock</button>
+        <button class="complete-btn">Complete</button>
+      </div>
+      <div class="day" data-day="Thursday">
+        <h3>Thursday</h3>
+        <input type="text" class="workout-name" placeholder="Workout Name">
+        <textarea class="workout-details" placeholder="Workout Details..."></textarea>
+        <button class="lock-btn">Lock</button>
+        <button class="complete-btn">Complete</button>
+      </div>
+      <div class="day" data-day="Friday">
+        <h3>Friday</h3>
+        <input type="text" class="workout-name" placeholder="Workout Name">
+        <textarea class="workout-details" placeholder="Workout Details..."></textarea>
+        <button class="lock-btn">Lock</button>
+        <button class="complete-btn">Complete</button>
+      </div>
+      <div class="day" data-day="Saturday">
+        <h3>Saturday</h3>
+        <input type="text" class="workout-name" placeholder="Workout Name">
+        <textarea class="workout-details" placeholder="Workout Details..."></textarea>
+        <button class="lock-btn">Lock</button>
+        <button class="complete-btn">Complete</button>
+      </div>
+      <div class="day" data-day="Sunday">
+        <h3>Sunday</h3>
+        <input type="text" class="workout-name" placeholder="Workout Name">
+        <textarea class="workout-details" placeholder="Workout Details..."></textarea>
+        <button class="lock-btn">Lock</button>
+        <button class="complete-btn">Complete</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="container stats-page">
+    <h1>Workout Notes</h1>
+
+    <section class="workout-log">
+      <h2>Workout Notes</h2>
+      <textarea id="workout-input" rows="4" placeholder="Write your workout here..."></textarea>
+      <br />
+      <button id="submit-workout">Submit Note</button>
+
+      <h3>Previous Workout Notes</h3>
+      <ul id="workout-list"></ul>
+    </section>
+    
+    <div class="completed-dailies-button">
+      <button onclick="window.location.href='completedDailies.html'">View Completed Dailies</button>
+    </div>
+
+    
+  <script src="workoutLog.js"></script>
+  <script src="playerData.js"></script>
+  <script src="stats.js"></script>
+</body>
+</html>
