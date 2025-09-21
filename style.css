@@ -72,14 +72,64 @@ p {
 }
 
 /* --- DAILY CHALLENGE --- */
+/* --- DAILY CHALLENGES GRID --- */
+.daily-challenges-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
 .challenge-box {
   background: #ffffff;
   border-left: 6px solid #60a5fa;
   border-radius: 12px;
-  padding: 2rem;
-  margin-top: 1rem;
+  padding: 1.5rem;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
+
+.challenge-box:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.challenge-box p {
+  margin-bottom: 0.5rem;
+}
+
+.complete-btn {
+  align-self: flex-start;
+  margin-top: 1rem;
+  background-color: #2563eb;
+  color: #fff;
+  border: none;
+  padding: 0.75rem 1.8rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.complete-btn:hover:not(:disabled) {
+  background-color: #1e40af;
+}
+
+.complete-btn:disabled {
+  background-color: #94a3b8;
+  cursor: default;
+}
+
+.motivation-tip {
+  margin-top: 2rem;
+  font-style: italic;
+  color: #64748b;
+  text-align: center;
+}
+
 
 .complete-btn {
   background-color: #2563eb;
